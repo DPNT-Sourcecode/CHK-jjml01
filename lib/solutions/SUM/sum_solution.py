@@ -2,7 +2,7 @@
 def compute(x, y):
     if x >= 0 and y >= 0:
 
-        if  isinstance(x,int) and isinstance(y,int):
+        if  isinstance(x,int) == True and isinstance(y,int) == True:
 
             result = sum(x, y)
             if result <= 200:
@@ -14,6 +14,7 @@ def compute(x, y):
             pass
     else:
         pass
+
 
 
 
