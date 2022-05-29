@@ -22,9 +22,7 @@ def checkout(skus):
     SingularA = offer200_RemainderA % 3
     offer150_QuotientA = offer200_RemainderA // 3
 
-    LenB = len(Bs)
-    RemainderB = LenB % 2
-    QuotientB = LenB // 2
+
 
     LenC = len(Cs)
 
@@ -34,8 +32,15 @@ def checkout(skus):
     RemainderE = LenE % 2
     QuotientE = LenE // 2
 
+
+    LenB = len(Bs)
+    LenB == LenB - QuotientE
+    RemainderB = LenB % 2
+    QuotientB = LenB // 2
+
     print(LenA, LenB, LenC, LenD, LenE)
-    finalPrice = (SingularA * 50) + (offer150_QuotientA * 130) + (offer200_QuotientA * 200) + (RemainderB * 30) + (QuotientB * 45) + (LenC * 20) + (LenD * 15) + (QuotientE * 30) + (LenE * 40)
+    finalPrice = (SingularA * 50) + (offer150_QuotientA * 130) + (offer200_QuotientA * 200) + (RemainderB * 30) + (QuotientB * 45) + (LenC * 20) + (LenD * 15)  + (LenE * 40)
     return finalPrice
+
 
 
