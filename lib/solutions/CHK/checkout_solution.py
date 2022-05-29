@@ -44,8 +44,3 @@ def checkout(skus):
     print(LenA, LenB, LenC, LenD, LenE)
     finalPrice = (SingularA * 50) + (offer150_QuotientA * 130) + (offer200_QuotientA * 200) + (RemainderB * 30) + (QuotientB * 45) + (LenC * 20) + (LenD * 15)  + (LenE * 40)
     return finalPrice
-
-
-
-
-
