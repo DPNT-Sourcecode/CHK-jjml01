@@ -4,12 +4,8 @@
 # friend_name = unicode string
 def hello(friend_name):
 
-    if friend_name == 'Hello, World!':
+    return('Hello, World!')
 
-    
-        return(friend_name)
-    else:
-        pass
 
 
 
