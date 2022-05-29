@@ -11,7 +11,9 @@ def checkout(skus):
     Ds = [x == 'D' for x in itemList]
 
     LenA = len(As)
+    RemainderA = LenA % 3
     LenB = len(Bs)
+    RemainderB = LenB % 2
     LenC = len(Cs)
     LenD = len(Ds)
 
@@ -22,12 +24,4 @@ def checkout(skus):
         'D': 15
 
     }
-
-
-
-
-
-
-
-
-
+    finalPrice = 
