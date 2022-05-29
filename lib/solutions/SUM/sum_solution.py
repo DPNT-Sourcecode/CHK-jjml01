@@ -1,5 +1,6 @@
 # noinspection PyShadowingBuiltins,PyUnusedLocal
 def compute(x, y):
+    assert x, y
     if x >= 0 and y >= 0:
 
         if  isinstance(x,int) == True and isinstance(y,int) == True:
@@ -14,6 +15,7 @@ def compute(x, y):
             pass
     else:
         pass
+
 
 
 
