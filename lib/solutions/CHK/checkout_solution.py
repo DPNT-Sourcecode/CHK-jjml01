@@ -5,8 +5,10 @@
 def checkout(skus):
     itemlist = [x for x in skus]
     price = {
-
+        'A' = 50
+        'B'
 
     }
+
 
 
