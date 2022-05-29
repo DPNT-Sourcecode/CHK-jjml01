@@ -5,7 +5,7 @@ def compute(x, y):
 
         if  isinstance(x,int) and isinstance(y,int):
 
-            result = sum(x, y)
+            result = sum([x,y])
             if result <= 200:
                 assert isinstance(result, int)
                 return result
@@ -15,4 +15,5 @@ def compute(x, y):
             pass
     else:
         pass
+
 
