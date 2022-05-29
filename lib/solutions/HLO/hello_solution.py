@@ -4,7 +4,12 @@
 # friend_name = unicode string
 def hello(friend_name):
 
-    assert isinstance(friend_name,str)
-    return(friend_name)
+    if friend_name == 'Hello, World!':
+
+    
+        return(friend_name)
+    else:
+        pass
+
 
 
