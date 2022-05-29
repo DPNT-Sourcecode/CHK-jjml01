@@ -9,7 +9,7 @@ def checkout(skus):
         if item not in ['A','B','C','D']:
             return -1
 
-    As = [x == 'A' for x in itemList]
+    As = [x for x in itemList]
     Bs = [x == 'B' for x in itemList]
     Cs = [x == 'C' for x in itemList]
     Ds = [x == 'D' for x in itemList]
@@ -25,6 +25,7 @@ def checkout(skus):
     print(LenA, LenB, LenC, LenD)
     finalPrice = (RemainderA * 50) + (QuotientA * 130) + (RemainderB * 30) + (QuotientB * 45) + (LenC * 20) + (LenD * 15)
     return finalPrice
+
 
 
 
