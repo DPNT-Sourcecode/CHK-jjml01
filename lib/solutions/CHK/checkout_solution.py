@@ -4,7 +4,7 @@
 # skus = unicode string
 def checkout(skus):
     itemList = [x for x in skus]
-    As = [x for itemList[x] == 'A']
+    As = [x for itemList == 'A']
 
     priceList = {
         'A': 50,
@@ -13,6 +13,7 @@ def checkout(skus):
         'D': 15
 
     }
+
 
 
 
