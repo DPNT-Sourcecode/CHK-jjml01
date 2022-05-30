@@ -170,9 +170,3 @@ def checkout(skus):
 
 
     return finalPrice
-
-
-
-
-
-
