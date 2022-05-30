@@ -1,14 +1,9 @@
-
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-
     # Initialisation, input handling
 
-    skuList = list(map (chr, range(65,91)))
-
-
-
+    skuList = list(map(chr, range(65, 91)))
 
     itemList = [x for x in skus]
     for item in itemList:
@@ -18,13 +13,13 @@ def checkout(skus):
     # Item handling
 
     itemBreakdown = [[0] for x in skuList]
-    print('itemBreakdown final',itemBreakdown)
+    print('itemBreakdown final', itemBreakdown)
     for item in skuList:
 
         itemBreakdown[skuList.index(item)] += [1 for x in itemList if x == skuList[skuList.index(item)]]
         if len(itemBreakdown[skuList.index(item)]) > 1:
             itemBreakdown[skuList.index(item)].pop(0)
-    print('itemBreakdown final',itemBreakdown)
+    print('itemBreakdown final', itemBreakdown)
     itemCount = [sum(x) for x in itemBreakdown]
 
     # Price dictionary
@@ -67,15 +62,12 @@ def checkout(skus):
         'V2': 90
     }
 
-
-
     # Offers
 
     RemainderA200 = itemCount[0] % 5
     QuotientA200 = itemCount[0] // 5
     RemainderA150 = RemainderA200 % 3
     QuotientA150 = RemainderA200 // 3
-
 
     RemainderE = itemCount[4] % 2
     QuotientE = itemCount[4] // 2
@@ -119,7 +111,6 @@ def checkout(skus):
     else:
         pass
 
-
     RemainderQ = itemCount[16] % 3
     QuotientQ = itemCount[16] // 3
 
@@ -136,29 +127,30 @@ def checkout(skus):
     RemainderV90 = RemainderV130 % 2
     QuotientV90 = RemainderV130 // 2
 
-
-
-
     # Output
 
     print(itemCount)
     finalPriceCompound = []
-    finalPriceCompound.append(QuotientA200 * priceDict['A1'] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
+    finalPriceCompound.append(
+        QuotientA200 * priceDict['A1'] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
     finalPriceCompound.append(QuotientB * priceDict['B1'] + RemainderB * priceDict['B'])
-    finalPriceCompound.append(QuotientH80 * priceDict['H1'] + QuotientH45 * priceDict['H2'] + RemainderH45 * priceDict['H'])
+    finalPriceCompound.append(
+        QuotientH80 * priceDict['H1'] + QuotientH45 * priceDict['H2'] + RemainderH45 * priceDict['H'])
     finalPriceCompound.append(QuotientK * priceDict['K1'] + RemainderK * priceDict['K'])
     finalPriceCompound.append(QuotientP * priceDict['P1'] + RemainderP * priceDict['P'])
     finalPriceCompound.append(QuotientQ * priceDict['Q1'] + RemainderQ * priceDict['Q'])
-    finalPriceCompound.append(QuotientV130 * priceDict['V1'] + QuotientV90 * priceDict['V2'] + RemainderV90 * priceDict['V'])
+    finalPriceCompound.append(
+        QuotientV130 * priceDict['V1'] + QuotientV90 * priceDict['V2'] + RemainderV90 * priceDict['V'])
 
     finalPriceNoCompound = []
     for item in skuList:
-        if item not in ['A','B','H','K','P','Q','V']:
-            finalPriceNoCompound.append(itemCount[skuList.index(item)] * priceDict[item])
-        else:
+        if item in ['A', 'B', 'H', 'K', 'P', 'Q', 'V']:
             pass
+        else:
+            finalPriceNoCompound.append(itemCount[skuList.index(item)] * priceDict[item])
 
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
