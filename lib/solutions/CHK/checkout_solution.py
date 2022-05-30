@@ -72,6 +72,7 @@ def checkout(skus):
     RemainderA150 = RemainderA200 % 3
     QuotientA150 = RemainderA200 // 3
 
+
     RemainderE = itemCount[4] % 2
     QuotientE = itemCount[4] // 2
     itemCount[1] -= QuotientE
@@ -137,13 +138,8 @@ def checkout(skus):
     # Output
 
     print(itemCount)
+    finalPrice = (QuotientA200 * priceDict[A1]
 
-    
+
 
     return finalPrice
-
-
-
-
-
-
