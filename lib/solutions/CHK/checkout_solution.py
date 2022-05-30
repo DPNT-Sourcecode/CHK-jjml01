@@ -150,11 +150,14 @@ def checkout(skus):
     finalPriceG = (itemCount[5] * priceDict['G'])
     finalPriceI = (itemCount[8] * priceDict['I'])
     finalPriceJ = (itemCount[9] * priceDict['J'])
-    finalPriceL = (itemCount[10] *)
-    finalPriceK =
+    finalPriceL = (itemCount[11] * priceDict['L'])
+    finalPriceM = (itemCount[12] * priceDict['M'])
+    finalPriceN = (itemCount[13] * priceDict['N'])
+    finalPriceO = (itemCount[14] * priceDict['O'])
 
 
 
     return finalPrice
+
 
 
