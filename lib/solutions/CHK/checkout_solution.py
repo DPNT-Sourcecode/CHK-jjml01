@@ -6,7 +6,10 @@ def checkout(skus):
     # Initialisation, input handling
 
     skuList = list(map (chr, range(65,91)))
-    skuListNoCompound = skuList.remove('A','B','H','K','P','Q','V')
+
+
+
+
     itemList = [x for x in skus]
     for item in itemList:
         if item not in skuList:
@@ -139,34 +142,23 @@ def checkout(skus):
     # Output
 
     print(itemCount)
-    finalPriceA = (QuotientA200 * priceDict['A1'] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
-    finalPriceB = (QuotientB * priceDict['B1'] + RemainderB * priceDict['B'])
-    finalPriceH = (QuotientH80 * priceDict['H1'] + QuotientH45 * priceDict['H2'] + RemainderH45 * priceDict['H'])
-    finalPriceK = (QuotientK * priceDict['K1'] + RemainderK * priceDict['K'])
-    finalPriceP = (QuotientP * priceDict['P1'] + RemainderP * priceDict['P'])
-    finalPriceQ = (QuotientQ * priceDict['Q1'] + RemainderQ * priceDict['Q'])
-    finalPriceV = (QuotientV130 * priceDict['V1'] + QuotientV90 * priceDict['V2'] + RemainderV90 * priceDict['V'])
+    finalPriceCompound = []
+    finalPriceCompound.append(QuotientA200 * priceDict['A1'] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
+    finalPriceCompound.append(QuotientB * priceDict['B1'] + RemainderB * priceDict['B'])
+    finalPriceCompound.append(QuotientH80 * priceDict['H1'] + QuotientH45 * priceDict['H2'] + RemainderH45 * priceDict['H'])
+    finalPriceCompound.append(QuotientK * priceDict['K1'] + RemainderK * priceDict['K'])
+    finalPriceCompound.append(QuotientP * priceDict['P1'] + RemainderP * priceDict['P'])
+    finalPriceCompound.append(QuotientQ * priceDict['Q1'] + RemainderQ * priceDict['Q'])
+    finalPriceCompound.append(QuotientV130 * priceDict['V1'] + QuotientV90 * priceDict['V2'] + RemainderV90 * priceDict['V'])
 
+    finalPriceNoCompound = []
+    for item in skuList:
+        if item not in ['A','B','H','K','P','Q','V']:
+            finalPriceNoCompound.append(itemCount[skuList.index(item)] * priceDict[item])
+        else:
+            pass
 
-    finalPriceC = (itemCount[2] * priceDict['C'])
-    finalPriceD = (itemCount[3] * priceDict['D'])
-    finalPriceE = (itemCount[4] * priceDict['E'])
-    finalPriceF = (itemCount[4] * priceDict['F'])
-    finalPriceG = (itemCount[5] * priceDict['G'])
-    finalPriceI = (itemCount[8] * priceDict['I'])
-    finalPriceJ = (itemCount[9] * priceDict['J'])
-    finalPriceL = (itemCount[11] * priceDict['L'])
-    finalPriceM = (itemCount[12] * priceDict['M'])
-    finalPriceN = (itemCount[13] * priceDict['N'])
-    finalPriceO = (itemCount[14] * priceDict['O'])
-    finalPriceR = (itemCount[17] * priceDict['R'])
-    finalPriceS = (itemCount[18] * priceDict['S'])
-    finalPriceT = (itemCount[19] * priceDict['T'])
-    finalPriceU = (itemCount[20] * priceDict['U'])
-
-
-
-
-
+    finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
