@@ -50,7 +50,17 @@ def checkout(skus):
         'W': 20,
         'X': 90,
         'Y': 10,
-        'Z': 50
+        'Z': 50,
+        'A1': 200,
+        'A2': 130,
+        'B1': 45,
+        'H1': 80,
+        'H2': 45,
+        'K1': 150,
+        'P1': 200,
+        'Q1': 80,
+        'V1': 130,
+        'V2': 90
     }
 
 
@@ -116,10 +126,10 @@ def checkout(skus):
     else:
         pass
 
-    RemainderV130 = itemCount[7] % 10
-    QuotientV130 = itemCount[7] // 10
-    RemainderV90 = RemainderH80 % 5
-    QuotientV90 = RemainderH80 // 5
+    RemainderV130 = itemCount[21] % 3
+    QuotientV130 = itemCount[21] // 3
+    RemainderV90 = RemainderV130 % 2
+    QuotientV90 = RemainderV130 // 2
 
 
 
@@ -127,9 +137,11 @@ def checkout(skus):
     # Output
 
     print(itemCount)
-    finalPrice = (RemainderA150 * 50) + (QuotientA150 * 130) + (QuotientA150 * 200) + (RemainderB * 30) + \
-                (QuotientB * 45) + (itemCount[2] * 20) + (itemCount[3] * 15) + (itemCount[4] * 40) + (itemCount[5] * 10)
+
+    
+
     return finalPrice
+
 
 
 
