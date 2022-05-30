@@ -9,9 +9,10 @@ def checkout(skus):
         if item not in skuList:
             return -1
 
-    itemBreakdown = []
+    itemBreakdown = [[0] for x in skuList]
 
     for item in skuList:
+        
         itemBreakdown.append([x for x in itemList if x == skuList[skuList.index(item)]])
 
     itemCount = [len(x) for x in itemBreakdown]
@@ -44,4 +45,5 @@ def checkout(skus):
     print(LenA, LenB, LenC, LenD, LenE)
     finalPrice = (SingularA * 50) + (offer150_QuotientA * 130) + (offer200_QuotientA * 200) + (RemainderB * 30) + (QuotientB * 45) + (LenC * 20) + (LenD * 15)  + (LenE * 40)
     return finalPrice
+
 
