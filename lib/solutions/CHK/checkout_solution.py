@@ -96,8 +96,17 @@ def checkout(skus):
     RemainderP = itemCount[16] % 5
     QuotientP = itemCount[16] // 5
 
-    RemainderQ = itemCount[16] % 5
-    QuotientQ = itemCount[16] // 5
+    RemaindeR = itemCount[17] % 3
+    QuotientR = itemCount[17] // 3
+    itemCount[16] -= QuotientR
+    if itemCount[16] < 0:
+        itemCount[16] = 0
+    else:
+        pass
+
+
+    RemainderQ = itemCount[17] % 3
+    QuotientQ = itemCount[17] // 3
 
 
 
@@ -111,6 +120,7 @@ def checkout(skus):
     finalPrice = (RemainderA150 * 50) + (QuotientA150 * 130) + (QuotientA150 * 200) + (RemainderB * 30) + \
                 (QuotientB * 45) + (itemCount[2] * 20) + (itemCount[3] * 15) + (itemCount[4] * 40) + (itemCount[5] * 10)
     return finalPrice
+
 
 
 
