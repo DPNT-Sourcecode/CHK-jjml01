@@ -44,8 +44,8 @@ def checkout(skus):
     RemainderB = itemCount[1] % 2
     QuotientB = itemCount[1] // 2
 
-    RemainderF = itemCount[5] % 2
-    QuotientF = itemCount[5] // 2
+    RemainderF = itemCount[5] % 3
+    QuotientF = itemCount[5] // 3
     itemCount[5] -= QuotientF
 
     # Output
@@ -54,6 +54,7 @@ def checkout(skus):
     finalPrice = (offer150_RemainderA * 50) + (offer150_QuotientA * 130) + (offer200_QuotientA * 200) + (RemainderB * 30) + \
                 (QuotientB * 45) + (itemCount[2] * 20) + (itemCount[3] * 15) + (itemCount[4] * 40) + (itemCount[5] * 10)
     return finalPrice
+
 
 
 
