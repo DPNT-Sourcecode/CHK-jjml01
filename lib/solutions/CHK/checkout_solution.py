@@ -5,7 +5,7 @@ def checkout(skus):
 
     # Initialisation, input handling
 
-    skuList = ['A' ,'B' ,'C' ,'D' ,'E' ,'F']
+    skuList = list(map (chr, range(65,91)))
     itemList = [x for x in skus]
     for item in itemList:
         if item not in skuList:
@@ -22,6 +22,11 @@ def checkout(skus):
             itemBreakdown[skuList.index(item)].pop(0)
     print('itemBreakdown final',itemBreakdown)
     itemCount = [sum(x) for x in itemBreakdown]
+
+    # Price dictionary
+
+    
+
 
     # Offers
 
@@ -54,3 +59,4 @@ def checkout(skus):
     finalPrice = (offer150_RemainderA * 50) + (offer150_QuotientA * 130) + (offer200_QuotientA * 200) + (RemainderB * 30) + \
                 (QuotientB * 45) + (itemCount[2] * 20) + (itemCount[3] * 15) + (itemCount[4] * 40) + (itemCount[5] * 10)
     return finalPrice
+
