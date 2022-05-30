@@ -140,10 +140,21 @@ def checkout(skus):
     print(itemCount)
     finalPriceA = (QuotientA200 * priceDict['A1'] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
     finalPriceB = (QuotientB * priceDict['B1'] + RemainderB * priceDict['B'])
-    finalPriceC = (itemCount[2] * priceDict['C'])
+    finalPriceH = (QuotientH80 * priceDict['H1'] + QuotientH45 * priceDict['H2'] + RemainderH45 * priceDict['H'])
+    finalPriceK = (QuotientK * priceDict['K1'])
 
+    finalPriceC = (itemCount[2] * priceDict['C'])
+    finalPriceD = (itemCount[3] * priceDict['D'])
+    finalPriceE = (itemCount[4] * priceDict['E'])
+    finalPriceF = (itemCount[4] * priceDict['F'])
+    finalPriceG = (itemCount[5] * priceDict['G'])
+    finalPriceI = (itemCount[8] * priceDict['I'])
+    finalPriceJ = (itemCount[9] * priceDict['J'])
+    finalPriceL = (itemCount[10] *)
+    finalPriceK =
 
 
 
     return finalPrice
+
 
