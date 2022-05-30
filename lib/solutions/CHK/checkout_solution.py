@@ -14,13 +14,13 @@ def checkout(skus):
     # Item handling
 
     itemBreakdown = [[0] for x in skuList]
-
+    print('itemBreakdown final',itemBreakdown)
     for item in skuList:
 
         itemBreakdown[skuList.index(item)].append([x for x in itemList if x == skuList[skuList.index(item)]])
         if len(itemBreakdown[skuList.index(item)]) > 1:
             itemBreakdown[skuList.index(item)].pop(0)
-
+    print('itemBreakdown final',itemBreakdown)
     itemCount = [len(x) for x in itemBreakdown]
 
     # Offers
@@ -54,4 +54,5 @@ def checkout(skus):
     finalPrice = (offer150_RemainderA * 50) + (offer150_QuotientA * 130) + (offer200_QuotientA * 200) + (RemainderB * 30) + \
                 (QuotientB * 45) + (itemCount[2] * 20) + (itemCount[3] * 15) + (itemCount[4] * 40) + (itemCount[5] * 10)
     return finalPrice
+
 
