@@ -26,18 +26,41 @@ def checkout(skus):
     # Price dictionary
 
     priceDict = {
-
-        
+        'A': 50,
+        'B': 30,
+        'C': 20,
+        'D': 15,
+        'E': 40,
+        'F': 10,
+        'G': 20,
+        'H': 10,
+        'I': 35,
+        'J': 60,
+        'L': 90,
+        'M': 15,
+        'N': 50,
+        'O': 10,
+        'P': 50,
+        'Q': 30,
+        'R': 50,
+        'S': 30,
+        'T': 20,
+        'U': 40,
+        'V': 50,
+        'W': 20,
+        'X': 90,
+        'Y': 10,
+        'Z': 50
     }
 
 
     # Offers
 
-    offer200_RemainderA = itemCount[0] % 5
-    offer200_QuotientA = itemCount[0] // 5
+    RemainderA200 = itemCount[0] % 5
+    QuotientA200 = itemCount[0] // 5
 
-    offer150_RemainderA = offer200_RemainderA % 3
-    offer150_QuotientA = offer200_RemainderA // 3
+    RemainderA150 = RemainderA200 % 3
+    QuotientA150 = RemainderA200 // 3
 
     RemainderE = itemCount[4] % 2
     QuotientE = itemCount[4] // 2
@@ -59,8 +82,9 @@ def checkout(skus):
     # Output
 
     print(itemCount)
-    finalPrice = (offer150_RemainderA * 50) + (offer150_QuotientA * 130) + (offer200_QuotientA * 200) + (RemainderB * 30) + \
+    finalPrice = (RemainderA150 * 50) + (QuotientA150 * 130) + (QuotientA150 * 200) + (RemainderB * 30) + \
                 (QuotientB * 45) + (itemCount[2] * 20) + (itemCount[3] * 15) + (itemCount[4] * 40) + (itemCount[5] * 10)
     return finalPrice
+
 
 
