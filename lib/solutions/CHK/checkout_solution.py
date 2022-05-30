@@ -6,7 +6,7 @@ def checkout(skus):
     # Initialisation, input handling
 
     skuList = list(map (chr, range(65,91)))
-    skuListNoOffer = skuList
+    skuListNoCompound = skuList.remove('A','B','H','K','P','Q','V')
     itemList = [x for x in skus]
     for item in itemList:
         if item not in skuList:
@@ -170,6 +170,7 @@ def checkout(skus):
 
 
     return finalPrice
+
 
 
 
