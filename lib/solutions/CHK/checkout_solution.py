@@ -6,6 +6,7 @@ def checkout(skus):
     # Initialisation, input handling
 
     skuList = list(map (chr, range(65,91)))
+    skuListNoOffer = skuList
     itemList = [x for x in skus]
     for item in itemList:
         if item not in skuList:
@@ -144,6 +145,8 @@ def checkout(skus):
     finalPriceK = (QuotientK * priceDict['K1'] + RemainderK * priceDict['K'])
     finalPriceP = (QuotientP * priceDict['P1'] + RemainderP * priceDict['P'])
     finalPriceQ = (QuotientQ * priceDict['Q1'] + RemainderQ * priceDict['Q'])
+    finalPriceV = (QuotientV130 * priceDict['V1'] + QuotientV90 * priceDict['V2'] + RemainderV90 * priceDict['V'])
+
 
     finalPriceC = (itemCount[2] * priceDict['C'])
     finalPriceD = (itemCount[3] * priceDict['D'])
@@ -159,12 +162,15 @@ def checkout(skus):
     finalPriceR = (itemCount[17] * priceDict['R'])
     finalPriceS = (itemCount[18] * priceDict['S'])
     finalPriceT = (itemCount[19] * priceDict['T'])
+    finalPriceU = (itemCount[20] * priceDict['U'])
+
 
 
 
 
 
     return finalPrice
+
 
 
 
