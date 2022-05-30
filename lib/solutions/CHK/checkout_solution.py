@@ -139,19 +139,19 @@ def checkout(skus):
     finalPriceCompound.append(QuotientK * priceDict['K1'] + RemainderK * priceDict['K'])
     finalPriceCompound.append(QuotientP * priceDict['P1'] + RemainderP * priceDict['P'])
     finalPriceCompound.append(QuotientQ * priceDict['Q1'] + RemainderQ * priceDict['Q'])
-    finalPriceCompound.append(
-        QuotientV130 * priceDict['V1'] + QuotientV90 * priceDict['V2'] + RemainderV90 * priceDict['V'])
+    finalPriceCompound.append(QuotientV130 * priceDict['V1'] + QuotientV90 * priceDict['V2'] + RemainderV90 * priceDict['V'])
 
     finalPriceNoCompound = []
     for item in skuList:
         if item in ['A', 'B', 'H', 'K', 'P', 'Q', 'V']:
             pass
         else:
-            finalPriceNoCompound.append(itemCount[skuList.index(item)] * priceDict.get(item))
+            finalPriceNoCompound.append(itemCount[skuList.index(item)] * int(priceDict.get(item)))
 
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
