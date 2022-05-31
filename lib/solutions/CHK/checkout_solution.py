@@ -4,7 +4,7 @@ def checkout(skus):
     # Initialisation, input handling
 
 
-    print(skus)
+    
     skuList = list(map(chr, range(65, 91)))
     skuListNoOffer = []
     for items in skuList:
@@ -82,7 +82,7 @@ def checkout(skus):
     print(priceDict)
     print(DictIndex,DictValue)
     # Offers
-    print(type(itemCount[0][1]))
+
     RemainderA200 = itemCount[0][1] % 5
     QuotientA200 = itemCount[0][1] // 5
     RemainderA150 = RemainderA200 % 3
@@ -153,7 +153,6 @@ def checkout(skus):
     print('initial total loss',totalLoss)
     while totalLoss > 0:
         for item in itemCount:
-            print('item',skuList[itemCount.index(item)])
             if skuList[itemCount.index(item)] in ['S','T','X','Y','Z']:
                 itemCount[itemCount.index(item)][1] -= 1
                 totalLoss -= 1
@@ -170,7 +169,6 @@ def checkout(skus):
     finalPriceCompound = []
 
     finalPriceCompound.append(QuotientA200 * DictValue[DictIndex.index('A1')] + QuotientA150 * DictValue[DictIndex.index('A2')] + RemainderA150 * DictValue[DictIndex.index('A')])
-    print('finalpricecompound',finalPriceCompound)
     finalPriceCompound.append(QuotientB * DictValue[DictIndex.index('B1')] + RemainderB * DictValue[DictIndex.index('B')])
     finalPriceCompound.append(QuotientH80 * DictValue[DictIndex.index('H1')] + QuotientH45 * DictValue[DictIndex.index('H2')] + RemainderH45 * DictValue[DictIndex.index('H')])
     finalPriceCompound.append(QuotientK * DictValue[DictIndex.index('K1')] + RemainderK * DictValue[DictIndex.index('K')])
@@ -179,7 +177,7 @@ def checkout(skus):
     finalPriceCompound.append(QuotientV130 * DictValue[DictIndex.index('V1')] + QuotientV90 * DictValue[DictIndex.index('V2')] + RemainderV90 * DictValue[DictIndex.index('V')])
     finalPriceCompound.append(multiOfferQuotient * DictValue[DictIndex.index('MO')])
     finalPriceNoCompound = []
-    print("Test")
+
     for item in skuList:
 
         if item in skuListNoOffer:
@@ -193,9 +191,3 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
-
-
-
-
-
-
