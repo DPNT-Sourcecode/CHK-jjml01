@@ -6,6 +6,12 @@ def checkout(skus):
 
 
     skuList = list(map(chr, range(65, 91)))
+    skuListNoOffer = []
+    for items in skuList:
+        if items in ['A', 'B', 'H', 'K', 'P', 'Q', 'V']:
+            pass
+        else:
+            skuListNoOffer.append(items)
 
     itemList = [x for x in skus]
     for item in itemList:
@@ -150,15 +156,18 @@ def checkout(skus):
     finalPriceNoCompound = []
     print("Test")
     for item in skuList:
-        if item in ['A', 'B', 'H', 'K', 'P', 'Q', 'V']:
-            pass
-        else:
-
+        if item in skuListNoOffer:
             finalPriceNoCompound.append(itemCount[skuList.index(item)] * DictValue[skuList.index(item)])
+
+        else:
+            pass
+
+
 
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
