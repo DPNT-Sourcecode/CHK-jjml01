@@ -62,6 +62,7 @@ def checkout(skus):
         'V2': 90
     }
     priceDictList = list(priceDict.items())
+    priceDictListIndex, priceDictListValue = 
     # Offers
 
     RemainderA200 = itemCount[0] % 5
@@ -131,7 +132,7 @@ def checkout(skus):
 
     print(itemCount)
     finalPriceCompound = []
-    finalPriceCompound.append(QuotientA200 * priceDictList['A1'] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
+    finalPriceCompound.append(QuotientA200 * priceDictList[priceDictList.index('A1')][1] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
     finalPriceCompound.append(QuotientB * priceDict['B1'] + RemainderB * priceDict['B'])
     finalPriceCompound.append(QuotientH80 * priceDict['H1'] + QuotientH45 * priceDict['H2'] + RemainderH45 * priceDict['H'])
     finalPriceCompound.append(QuotientK * priceDict['K1'] + RemainderK * priceDict['K'])
@@ -150,6 +151,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
