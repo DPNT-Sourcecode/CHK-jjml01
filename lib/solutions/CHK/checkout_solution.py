@@ -152,20 +152,22 @@ def checkout(skus):
     totalLoss = multiOfferQuotient * 3
     print('initial total loss',totalLoss)
     while totalLoss > 0:
-        for item in itemCount:
-            if totalLoss == 0:
-                    break
-            if skuList[itemCount.index(item)] in ['S','T','X','Y','Z']:
-                if itemCount[itemCount.index(item)][1] > 0:
-                    itemCount[itemCount.index(item)][1] -= 1
-                    totalLoss -= 1
+        for character in ['Z','Y','S','T','X']:
+            for item in itemCount:
+
+
+                if skuList[itemCount.index(item)] == character:
+                    if totalLoss == 0:
+                        break
+                    if itemCount[itemCount.index(item)][1] > 0:
+                        itemCount[itemCount.index(item)][1] -= 1
+                        totalLoss -= 1
+                    else:
+                        pass
+
+                    print('total loss',totalLoss)
                 else:
                     pass
-
-                print('total loss',totalLoss)
-            else:
-                pass
-
 
 
     # Output
@@ -197,3 +199,4 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
