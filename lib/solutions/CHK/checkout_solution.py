@@ -129,8 +129,8 @@ def checkout(skus):
     RemainderQ = itemCount[16] % 3
     QuotientQ = itemCount[16] // 3
 
-    RemainderU = itemCount[20] % 3
-    QuotientU = itemCount[20] // 3
+    RemainderU = itemCount[20] % 4
+    QuotientU = itemCount[20] // 4
     itemCount[20] -= QuotientU
     if itemCount[20] < 0:
         itemCount[20] = 0
@@ -172,3 +172,4 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
