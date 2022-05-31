@@ -153,17 +153,15 @@ def checkout(skus):
     print('initial total loss',totalLoss)
     while totalLoss > 0:
         for character in ['Z','Y','T','S','X']:
-            for item in itemCount:
+            for item in itemList:
 
 
-                if skuList[itemCount.index(item)] == character:
+                if item == character:
                     if totalLoss == 0:
                         break
-                    while itemCount[itemCount.index(item)][1] > 0:
-                        itemCount[itemCount.index(item)][1] -= 1
+                    if itemCount[skuList.index(item)][1] > 0:
+                        itemCount[skuList.index(item)][1] -= 1
                         totalLoss -= 1
-                        if itemCount[itemCount.index(item)][1] == 0:
-                            break
                     else:
                         pass
                     print(itemCount)
@@ -202,5 +200,6 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
