@@ -68,7 +68,8 @@ def checkout(skus):
         ('P1',200),
         ('Q1',80),
         ('V1',130),
-        ('V2',90)
+        ('V2',90),
+        ('MO',45)
     ]
 
 
@@ -149,7 +150,8 @@ def checkout(skus):
     while totalLoss > 0:
         for item in itemCount:
             if skuList[itemCount.index(item)] in ['S','T','X','Y','Z']:
-                itemCount[itemCount.index(item)] -=
+                itemCount[itemCount.index(item)] -= 1
+                totalLoss -= 1
 
 
 
@@ -167,7 +169,7 @@ def checkout(skus):
     finalPriceCompound.append(QuotientP * DictValue[DictIndex.index('P1')] + RemainderP * DictValue[DictIndex.index('P')])
     finalPriceCompound.append(QuotientQ * DictValue[DictIndex.index('Q1')] + RemainderQ * DictValue[DictIndex.index('Q')])
     finalPriceCompound.append(QuotientV130 * DictValue[DictIndex.index('V1')] + QuotientV90 * DictValue[DictIndex.index('V2')] + RemainderV90 * DictValue[DictIndex.index('V')])
-
+    finalPriceCompound.append(multiOfferQuotient * DictValue[DictIndex.index('MO')])
     finalPriceNoCompound = []
     print("Test")
     for item in skuList:
@@ -183,6 +185,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
