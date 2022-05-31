@@ -146,11 +146,12 @@ def checkout(skus):
         if item in ['A', 'B', 'H', 'K', 'P', 'Q', 'V']:
             pass
         else:
-            finalPriceNoCompound.append(itemCount[skuList.index(item)] * priceDictList[skuList.index(item)[1]])
+            finalPriceNoCompound.append(itemCount[skuList.index(item)] * priceDictList[skuList.index(item)][1])
 
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
