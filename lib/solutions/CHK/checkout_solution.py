@@ -67,7 +67,7 @@ def checkout(skus):
         ('B1',45),
         ('H1',80),
         ('H2',45),
-        ('K1',150),
+        ('K1',120),
         ('P1',200),
         ('Q1',80),
         ('V1',130),
@@ -191,5 +191,6 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
