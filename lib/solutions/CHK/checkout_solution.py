@@ -45,7 +45,7 @@ def checkout(skus):
         ('K',80),
         ('L',90),
         ('M',15),
-        ('N',50),
+        ('N',40),
         ('O',10),
         ('P',50),
         ('Q',30),
@@ -114,8 +114,8 @@ def checkout(skus):
     else:
         pass
 
-    RemainderP = itemCount[16] % 5
-    QuotientP = itemCount[16] // 5
+    RemainderP = itemCount[15] % 5
+    QuotientP = itemCount[15] // 5
 
     RemaindeR = itemCount[17] % 3
     QuotientR = itemCount[17] // 3
@@ -159,7 +159,7 @@ def checkout(skus):
     finalPriceNoCompound = []
     print("Test")
     for item in skuList:
-        
+
         if item in skuListNoOffer:
             finalPriceNoCompound.append(itemCount[skuList.index(item)] * DictValue[skuList.index(item)])
 
@@ -171,4 +171,5 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
