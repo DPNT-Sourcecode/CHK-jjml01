@@ -156,6 +156,7 @@ def checkout(skus):
     finalPriceNoCompound = []
     print("Test")
     for item in skuList:
+        print(item)
         if item in skuListNoOffer:
             finalPriceNoCompound.append(itemCount[skuList.index(item)] * DictValue[skuList.index(item)])
 
@@ -167,6 +168,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
