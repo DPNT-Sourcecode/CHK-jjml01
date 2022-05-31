@@ -131,11 +131,9 @@ def checkout(skus):
 
     print(itemCount)
     finalPriceCompound = []
-    finalPriceCompound.append(
-        QuotientA200 * priceDictList['A1'] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
+    finalPriceCompound.append(QuotientA200 * priceDictList['A1'] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
     finalPriceCompound.append(QuotientB * priceDict['B1'] + RemainderB * priceDict['B'])
-    finalPriceCompound.append(
-        QuotientH80 * priceDict['H1'] + QuotientH45 * priceDict['H2'] + RemainderH45 * priceDict['H'])
+    finalPriceCompound.append(QuotientH80 * priceDict['H1'] + QuotientH45 * priceDict['H2'] + RemainderH45 * priceDict['H'])
     finalPriceCompound.append(QuotientK * priceDict['K1'] + RemainderK * priceDict['K'])
     finalPriceCompound.append(QuotientP * priceDict['P1'] + RemainderP * priceDict['P'])
     finalPriceCompound.append(QuotientQ * priceDict['Q1'] + RemainderQ * priceDict['Q'])
@@ -152,6 +150,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
