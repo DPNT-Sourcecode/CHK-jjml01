@@ -25,46 +25,46 @@ def checkout(skus):
     itemCount = [sum(x) for x in itemBreakdown]
 
     # Price dictionary
-    priceDict = {
-        'A': 50,
-        'B': 30,
-        'C': 20,
-        'D': 15,
-        'E': 40,
-        'F': 10,
-        'G': 20,
-        'H': 10,
-        'I': 35,
-        'J': 60,
-        'L': 90,
-        'M': 15,
-        'N': 50,
-        'O': 10,
-        'P': 50,
-        'Q': 30,
-        'R': 50,
-        'S': 30,
-        'T': 20,
-        'U': 40,
-        'V': 50,
-        'W': 20,
-        'X': 90,
-        'Y': 10,
-        'Z': 50,
-        'A1': 200,
-        'A2': 130,
-        'B1': 45,
-        'H1': 80,
-        'H2': 45,
-        'K1': 150,
-        'P1': 200,
-        'Q1': 80,
-        'V1': 130,
-        'V2': 90
-    }
+    priceDict = [
+        ('A', 50),
+        ('B', 30),
+        ('C', 20),
+        ('D', 15),
+        ('E', 40),
+        ('F', 10),
+        ('G', 20),
+        ('H', 10),
+        ('I', 35),
+        ('J', 60),
+        ('L', 90),
+        ('M', 15),
+        ('N', 50),
+        ('O', 10),
+        ('P', 50),
+        ('Q', 30),
+        ('R', 50),
+        ('S', 30),
+        ('T', 20),
+        ('U', 40),
+        ('V', 50),
+        ('W', 20),
+        ('X', 90),
+        ('Y', 10),
+        ('Z', 50),
+        ('A1', 200),
+        ('A2', 130),
+        ('B1', 45),
+        ('H1', 80),
+        ('H2', 45),
+        ('K1', 150),
+        ('P1', 200),
+        ('Q1', 80),
+        ('V1', 130),
+        ('V2', 90)
+    ]
 
-    priceDictList = list(priceDict.items())
-    DictIndex, DictValue = zip(*priceDictList)
+
+    DictIndex, DictValue = zip(*priceDict)
     # Offers
 
     RemainderA200 = itemCount[0] % 5
@@ -133,7 +133,7 @@ def checkout(skus):
     # Output
 
     print(itemCount)
-    print(priceDictList[skuList.index(item)][1])
+
     finalPriceCompound = []
     finalPriceCompound.append(QuotientA200 * DictValue[DictIndex.index('A1')] + QuotientA150 * DictValue[DictIndex.index('A2')] + RemainderA150 * DictValue[DictIndex.index('A')])
     finalPriceCompound.append(QuotientB * DictValue[DictIndex.index('B1')] + RemainderB * DictValue[DictIndex.index('B2')])
@@ -149,10 +149,11 @@ def checkout(skus):
         if item in ['A', 'B', 'H', 'K', 'P', 'Q', 'V']:
             pass
         else:
-            finalPriceNoCompound.append(itemCount[skuList.index(item)] * priceDictList[skuList.index(item)][1])
+            finalPriceNoCompound.append(itemCount[skuList.index(item)] * priceDict[skuList.index(item)][1])
 
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
