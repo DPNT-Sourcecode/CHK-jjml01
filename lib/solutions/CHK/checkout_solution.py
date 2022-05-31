@@ -42,6 +42,7 @@ def checkout(skus):
         ('H',10),
         ('I',35),
         ('J',60),
+        ('K',80),
         ('L',90),
         ('M',15),
         ('N',50),
@@ -170,10 +171,3 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
-
-
-
-
-
-
-
