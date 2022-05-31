@@ -4,7 +4,7 @@ def checkout(skus):
     # Initialisation, input handling
 
 
-
+    print(skus)
     skuList = list(map(chr, range(65, 91)))
     skuListNoOffer = []
     for items in skuList:
@@ -187,11 +187,3 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
-
-
-
-
-
-
-
-
