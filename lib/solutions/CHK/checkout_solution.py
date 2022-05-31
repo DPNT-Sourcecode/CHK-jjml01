@@ -184,6 +184,7 @@ def checkout(skus):
     finalPriceCompound.append(QuotientQ * DictValue[DictIndex.index('Q1')] + RemainderQ * DictValue[DictIndex.index('Q')])
     finalPriceCompound.append(QuotientV130 * DictValue[DictIndex.index('V1')] + QuotientV90 * DictValue[DictIndex.index('V2')] + RemainderV90 * DictValue[DictIndex.index('V')])
     finalPriceCompound.append(multiOfferQuotient * DictValue[DictIndex.index('MO')])
+    print('multioffer quotient',multiOfferQuotient,DictValue[DictIndex.index('MO')])
     finalPriceNoCompound = []
 
     for item in skuList:
@@ -199,4 +200,5 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
