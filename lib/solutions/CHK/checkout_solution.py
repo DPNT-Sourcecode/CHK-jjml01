@@ -82,7 +82,7 @@ def checkout(skus):
     print(priceDict)
     print(DictIndex,DictValue)
     # Offers
-
+    print(type(itemCount[0][1]))
     RemainderA200 = itemCount[0][1] % 5
     QuotientA200 = itemCount[0][1] // 5
     RemainderA150 = RemainderA200 % 3
@@ -193,6 +193,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
