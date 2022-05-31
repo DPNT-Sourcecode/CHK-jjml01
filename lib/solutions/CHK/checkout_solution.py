@@ -32,6 +32,7 @@ def checkout(skus):
     initialCount = [sum(x) for x in itemBreakdown]
     itemCountInitial = list(zip(skuList,initialCount))
     itemCount = [list(x) for x in itemCountInitial]
+    print(itemCount)
 
     # Price dictionary
     priceDict = [
@@ -192,6 +193,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
