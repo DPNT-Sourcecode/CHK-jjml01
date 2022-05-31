@@ -14,6 +14,7 @@ def checkout(skus):
             skuListNoOffer.append(items)
 
     itemList = [x for x in skus]
+    print(itemList)
     for item in itemList:
         if item not in skuList:
             return -1
@@ -171,5 +172,6 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
