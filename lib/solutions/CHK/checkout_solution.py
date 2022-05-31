@@ -32,45 +32,47 @@ def checkout(skus):
 
     # Price dictionary
     priceDict = [
-        ('A', 50),
-        ('B', 30),
-        ('C', 20),
-        ('D', 15),
-        ('E', 40),
-        ('F', 10),
-        ('G', 20),
-        ('H', 10),
-        ('I', 35),
-        ('J', 60),
-        ('L', 90),
-        ('M', 15),
-        ('N', 50),
-        ('O', 10),
-        ('P', 50),
-        ('Q', 30),
-        ('R', 50),
-        ('S', 30),
-        ('T', 20),
-        ('U', 40),
-        ('V', 50),
-        ('W', 20),
-        ('X', 90),
-        ('Y', 10),
-        ('Z', 50),
-        ('A1', 200),
-        ('A2', 130),
-        ('B1', 45),
-        ('H1', 80),
-        ('H2', 45),
-        ('K1', 150),
-        ('P1', 200),
-        ('Q1', 80),
-        ('V1', 130),
-        ('V2', 90)
+        ('A',50),
+        ('B',30),
+        ('C',20),
+        ('D',15),
+        ('E',40),
+        ('F',10),
+        ('G',20),
+        ('H',10),
+        ('I',35),
+        ('J',60),
+        ('L',90),
+        ('M',15),
+        ('N',50),
+        ('O',10),
+        ('P',50),
+        ('Q',30),
+        ('R',50),
+        ('S',30),
+        ('T',20),
+        ('U',40),
+        ('V',50),
+        ('W',20),
+        ('X',90),
+        ('Y',10),
+        ('Z',50),
+        ('A1',200),
+        ('A2',130),
+        ('B1',45),
+        ('H1',80),
+        ('H2',45),
+        ('K1',150),
+        ('P1',200),
+        ('Q1',80),
+        ('V1',130),
+        ('V2',90)
     ]
 
 
-    DictIndex, DictValue = zip(*priceDict)
+    DictIndexT, DictValueT = zip(*priceDict)
+    DictIndex = list(DictIndexT)
+    DictValue = list(DictValueT)
     print(priceDict)
     print(DictIndex,DictValue)
     # Offers
@@ -168,6 +170,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
