@@ -62,7 +62,7 @@ def checkout(skus):
         'V2': 90
     }
     priceDictList = list(priceDict.items())
-    priceDictListIndex, priceDictListValue = 
+    priceDictListIndex, priceDictListValue = zip*()
     # Offers
 
     RemainderA200 = itemCount[0] % 5
@@ -151,6 +151,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
