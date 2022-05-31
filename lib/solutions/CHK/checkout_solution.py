@@ -8,7 +8,7 @@ def checkout(skus):
     skuList = list(map(chr, range(65, 91)))
     skuListNoOffer = []
     for items in skuList:
-        if items in ['A', 'B', 'H', 'K', 'P', 'Q', 'V', 'S', 'T', 'X', 'Y', 'Z']:
+        if items in ['A', 'B', 'H', 'K', 'P', 'Q', 'V']:
             pass
         else:
             skuListNoOffer.append(items)
@@ -191,4 +191,5 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
