@@ -143,6 +143,10 @@ def checkout(skus):
     QuotientV90 = RemainderV130 // 2
 
     multiOffer = sum(itemCount[skuList.index(x)] for x in ['S','T','X','Y','Z'])
+    multiOfferRemainder = multiOffer % 3
+    multiOfferQuotient = multiOffer // 3
+    totalLoss = multiOfferQuotient * 3
+    for i
 
     # Output
 
@@ -174,6 +178,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
