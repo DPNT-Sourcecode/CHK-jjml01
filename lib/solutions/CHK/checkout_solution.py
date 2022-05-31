@@ -29,8 +29,9 @@ def checkout(skus):
         if len(itemBreakdown[skuList.index(item)]) > 1:
             itemBreakdown[skuList.index(item)].pop(0)
     print('itemBreakdown final', itemBreakdown)
-    itemCountInitial = [sum(x) for x in itemBreakdown]
-    itemCount = list(zip(skuList,itemCountInitial))
+    initialCount = [sum(x) for x in itemBreakdown]
+    itemCountInitial = list(zip(skuList,initialCount))
+    itemCount = [list(x) for x in itemCountInitial]
 
     # Price dictionary
     priceDict = [
@@ -191,5 +192,6 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
