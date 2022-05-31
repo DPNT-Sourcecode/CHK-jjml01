@@ -62,7 +62,7 @@ def checkout(skus):
         'V2': 90
     }
     priceDictList = list(priceDict.items())
-    priceDictListIndex, priceDictListValue = zip*()
+    DictIndex, DictValue = zip(*priceDictList)
     # Offers
 
     RemainderA200 = itemCount[0] % 5
@@ -132,13 +132,13 @@ def checkout(skus):
 
     print(itemCount)
     finalPriceCompound = []
-    finalPriceCompound.append(QuotientA200 * priceDictList[priceDictList.index('A1')][1] + QuotientA150 * priceDict['A2'] + RemainderA150 * priceDict['A'])
-    finalPriceCompound.append(QuotientB * priceDict['B1'] + RemainderB * priceDict['B'])
-    finalPriceCompound.append(QuotientH80 * priceDict['H1'] + QuotientH45 * priceDict['H2'] + RemainderH45 * priceDict['H'])
-    finalPriceCompound.append(QuotientK * priceDict['K1'] + RemainderK * priceDict['K'])
-    finalPriceCompound.append(QuotientP * priceDict['P1'] + RemainderP * priceDict['P'])
-    finalPriceCompound.append(QuotientQ * priceDict['Q1'] + RemainderQ * priceDict['Q'])
-    finalPriceCompound.append(QuotientV130 * priceDict['V1'] + QuotientV90 * priceDict['V2'] + RemainderV90 * priceDict['V'])
+    finalPriceCompound.append(QuotientA200 * DictValue[DictIndex.index('A1')] + QuotientA150 * DictValue[DictIndex.index('A2')] + RemainderA150 * DictValue[DictIndex.index('A')])
+    finalPriceCompound.append(QuotientB * DictValue[DictIndex.index('B1')] + RemainderB * DictValue[DictIndex.index('B2')])
+    finalPriceCompound.append(QuotientH80 * DictValue[DictIndex.index('H1')] + QuotientH45 * DictValue[DictIndex.index('H2')] + RemainderH45 * DictValue[DictIndex.index('H')])
+    finalPriceCompound.append(QuotientK * DictValue[DictIndex.index('K1')] + RemainderK * DictValue[DictIndex.index('K')])
+    finalPriceCompound.append(QuotientP * DictValue[DictIndex.index('P1')] + RemainderP * DictValue[DictIndex.index('P')])
+    finalPriceCompound.append(QuotientQ * DictValue[DictIndex.index('Q1')] + RemainderQ * DictValue[DictIndex.index('Q')])
+    finalPriceCompound.append(QuotientV130 * DictValue[DictIndex.index('V1')] + QuotientV90 * DictValue[DictIndex.index('V2')] + RemainderV90 * DictValue[DictIndex.index('V')])
 
     finalPriceNoCompound = []
     print("Test")
@@ -151,11 +151,3 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
-
-
-
-
-
-
-
-
