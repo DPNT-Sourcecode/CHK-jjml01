@@ -152,8 +152,8 @@ def checkout(skus):
     totalLoss = multiOfferQuotient * 3
     print('initial total loss',totalLoss)
     while totalLoss > 0:
-        for character in ['Z','Y','T','S','X']:
-            for item in itemCount:
+        for item in itemCount:
+            for character in ['Z','Y','T','S','X']:
 
 
                 if skuList[itemCount.index(item)] == character:
@@ -200,6 +200,7 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
 
 
