@@ -150,10 +150,13 @@ def checkout(skus):
     print('initial total loss',totalLoss)
     while totalLoss > 0:
         for item in itemCount:
+            print('item',skuList[itemCount.index(item)])
             if skuList[itemCount.index(item)] in ['S','T','X','Y','Z']:
                 itemCount[itemCount.index(item)] -= 1
                 totalLoss -= 1
                 print('total loss',totalLoss)
+            else:
+                pass
 
 
 
@@ -187,3 +190,4 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
