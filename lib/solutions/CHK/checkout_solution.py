@@ -29,7 +29,8 @@ def checkout(skus):
         if len(itemBreakdown[skuList.index(item)]) > 1:
             itemBreakdown[skuList.index(item)].pop(0)
     print('itemBreakdown final', itemBreakdown)
-    itemCount = [sum(x) for x in itemBreakdown]
+    itemCountInitial = [sum(x) for x in itemBreakdown]
+    itemCount = list(zip(skuList,itemCountInitial))
 
     # Price dictionary
     priceDict = [
@@ -80,66 +81,66 @@ def checkout(skus):
     print(DictIndex,DictValue)
     # Offers
 
-    RemainderA200 = itemCount[0] % 5
-    QuotientA200 = itemCount[0] // 5
+    RemainderA200 = itemCount[0][1] % 5
+    QuotientA200 = itemCount[0][1] // 5
     RemainderA150 = RemainderA200 % 3
     QuotientA150 = RemainderA200 // 3
 
-    RemainderE = itemCount[4] % 2
-    QuotientE = itemCount[4] // 2
-    itemCount[1] -= QuotientE
-    if itemCount[1] < 0:
-        itemCount[1] = 0
+    RemainderE = itemCount[4][1] % 2
+    QuotientE = itemCount[4][1] // 2
+    itemCount[1][1] -= QuotientE
+    if itemCount[1][1] < 0:
+        itemCount[1][1] = 0
     else:
         pass
 
-    RemainderB = itemCount[1] % 2
-    QuotientB = itemCount[1] // 2
+    RemainderB = itemCount[1][1] % 2
+    QuotientB = itemCount[1][1] // 2
 
-    RemainderF = itemCount[5] % 3
-    QuotientF = itemCount[5] // 3
-    itemCount[5] -= QuotientF
+    RemainderF = itemCount[5][1] % 3
+    QuotientF = itemCount[5][1] // 3
+    itemCount[5][1] -= QuotientF
 
-    RemainderH80 = itemCount[7] % 10
-    QuotientH80 = itemCount[7] // 10
+    RemainderH80 = itemCount[7][1] % 10
+    QuotientH80 = itemCount[7][1] // 10
     RemainderH45 = RemainderH80 % 5
     QuotientH45 = RemainderH80 // 5
 
-    RemainderK = itemCount[10] % 2
-    QuotientK = itemCount[10] // 2
+    RemainderK = itemCount[10][1] % 2
+    QuotientK = itemCount[10][1] // 2
 
-    RemainderN = itemCount[13] % 3
-    QuotientN = itemCount[13] // 3
-    itemCount[12] -= QuotientN
-    if itemCount[12] < 0:
-        itemCount[12] = 0
+    RemainderN = itemCount[13][1] % 3
+    QuotientN = itemCount[13][1] // 3
+    itemCount[12][1] -= QuotientN
+    if itemCount[12][1] < 0:
+        itemCount[12][1] = 0
     else:
         pass
 
-    RemainderP = itemCount[15] % 5
-    QuotientP = itemCount[15] // 5
+    RemainderP = itemCount[15][1] % 5
+    QuotientP = itemCount[15][1] // 5
 
-    RemaindeR = itemCount[17] % 3
-    QuotientR = itemCount[17] // 3
-    itemCount[16] -= QuotientR
-    if itemCount[16] < 0:
-        itemCount[16] = 0
+    RemaindeR = itemCount[17][1] % 3
+    QuotientR = itemCount[17][1] // 3
+    itemCount[16][1] -= QuotientR
+    if itemCount[16][1] < 0:
+        itemCount[16][1] = 0
     else:
         pass
 
-    RemainderQ = itemCount[16] % 3
-    QuotientQ = itemCount[16] // 3
+    RemainderQ = itemCount[16][1] % 3
+    QuotientQ = itemCount[16][1] // 3
 
-    RemainderU = itemCount[20] % 4
-    QuotientU = itemCount[20] // 4
-    itemCount[20] -= QuotientU
-    if itemCount[20] < 0:
-        itemCount[20] = 0
+    RemainderU = itemCount[20][1] % 4
+    QuotientU = itemCount[20][1] // 4
+    itemCount[20][1] -= QuotientU
+    if itemCount[20][1] < 0:
+        itemCount[20][1] = 0
     else:
         pass
 
-    RemainderV130 = itemCount[21] % 3
-    QuotientV130 = itemCount[21] // 3
+    RemainderV130 = itemCount[21][1] % 3
+    QuotientV130 = itemCount[21][1] // 3
     RemainderV90 = RemainderV130 % 2
     QuotientV90 = RemainderV130 // 2
 
@@ -152,7 +153,7 @@ def checkout(skus):
         for item in itemCount:
             print('item',skuList[itemCount.index(item)])
             if skuList[itemCount.index(item)] in ['S','T','X','Y','Z']:
-                itemCount[itemCount.index(item)] -= 1
+                itemCount[itemCount.index(item)][1] -= 1
                 totalLoss -= 1
                 print('total loss',totalLoss)
             else:
@@ -180,7 +181,7 @@ def checkout(skus):
     for item in skuList:
 
         if item in skuListNoOffer:
-            finalPriceNoCompound.append(itemCount[skuList.index(item)] * DictValue[skuList.index(item)])
+            finalPriceNoCompound.append(itemCount[skuList.index(item)][1] * DictValue[skuList.index(item)])
 
         else:
             pass
@@ -190,4 +191,5 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
 
