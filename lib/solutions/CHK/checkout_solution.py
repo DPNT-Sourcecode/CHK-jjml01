@@ -131,15 +131,7 @@ def checkout(skus):
     # Output
 
     print(itemCount)
-    finalPriceCompound = []
-    finalPriceCompound.append(QuotientA200 * DictValue[DictIndex.index('A1')] + QuotientA150 * DictValue[DictIndex.index('A2')] + RemainderA150 * DictValue[DictIndex.index('A')])
-    finalPriceCompound.append(QuotientB * DictValue[DictIndex.index('B1')] + RemainderB * DictValue[DictIndex.index('B2')])
-    finalPriceCompound.append(QuotientH80 * DictValue[DictIndex.index('H1')] + QuotientH45 * DictValue[DictIndex.index('H2')] + RemainderH45 * DictValue[DictIndex.index('H')])
-    finalPriceCompound.append(QuotientK * DictValue[DictIndex.index('K1')] + RemainderK * DictValue[DictIndex.index('K')])
-    finalPriceCompound.append(QuotientP * DictValue[DictIndex.index('P1')] + RemainderP * DictValue[DictIndex.index('P')])
-    finalPriceCompound.append(QuotientQ * DictValue[DictIndex.index('Q1')] + RemainderQ * DictValue[DictIndex.index('Q')])
-    finalPriceCompound.append(QuotientV130 * DictValue[DictIndex.index('V1')] + QuotientV90 * DictValue[DictIndex.index('V2')] + RemainderV90 * DictValue[DictIndex.index('V')])
-
+    
     finalPriceNoCompound = []
     print("Test")
     for item in skuList:
@@ -151,3 +143,4 @@ def checkout(skus):
     finalPrice = sum(finalPriceNoCompound) + sum(finalPriceCompound)
 
     return finalPrice
+
